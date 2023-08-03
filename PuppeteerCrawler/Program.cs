@@ -7,7 +7,8 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 builder.Services.AddNodeServices();
-var screenshotsFolderPath = "D:\\TestApps\\PuppeteerCrawler\\PuppeteerCrawler\\Screenshots\\";
+var currentDirectory = Directory.GetCurrentDirectory();
+var screenshotsFolderPath = Path.Combine(currentDirectory, "Screenshots");
 builder.Services.AddSingleton(new PuppeteerService(screenshotsFolderPath));
 
 
