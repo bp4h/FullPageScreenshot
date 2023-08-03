@@ -6,11 +6,9 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddNodeServices();
 var currentDirectory = Directory.GetCurrentDirectory();
 var screenshotsFolderPath = Path.Combine(currentDirectory, "Screenshots");
 builder.Services.AddSingleton(new PuppeteerService(screenshotsFolderPath));
-
 
 var app = builder.Build();
 
